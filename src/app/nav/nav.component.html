@@ -1,0 +1,58 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/home">Home</a>
+      <a mat-list-item routerLink="/login">SignIn</a>
+      <a mat-list-item routerLink="/register">Register</a>
+      <a mat-list-item routerLink="/login">Logout</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+
+      <div id="navbar" class="navbar-collapse collapse">
+        <div class="hidden-xs navbar-form navbar-right">
+           <a onclick="documentTrack('#search');" href="#search" class="search-form-tigger btn btn-success"  data-toggle="search-form"><i class="fa fa-search" aria-hidden="true"></i></a>
+        </div>
+        <div class="visible-xs navbar-form navbar-right">
+           <input type="text" name="search" class="search form-control" placeholder="Search">
+        </div>
+        <!--/.navbar-collapse -->
+     </div>
+
+      <div class="search-form-wrapper">
+        <form class="search-form" id="" action="">
+           <div class="input-group">
+              <input type="text" name="search" class="search form-control" placeholder="Search">
+              <span class="input-group-addon" id="basic-addon2"><i class="fa fa-search" aria-hidden="true"></i>
+              </span>
+              <span class="input-group-addon search-close" id="basic-addon2"><i class="fa fa-window-close" aria-hidden="true"></i>
+              </span>
+           </div>
+        </form>
+     </div>
+      <span class="example-spacer"></span>
+      <span class='name'>Sudama</span>
+      <span class="example-spacer"></span>
+      
+     <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+    
+    </mat-toolbar>
+    <!-- Add Content Here -->
+
+    <router-outlet></router-outlet>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

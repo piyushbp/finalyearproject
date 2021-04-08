@@ -1,0 +1,53 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+a {
+  color: white;
+  padding-left: 1em;
+}
+
+spacer1{
+  flex: 30px;
+}
+.fa fa-user{
+  padding: 10px;
+}
+
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.mat-toolbar {
+  text-align: center;
+}
+
+.name {
+  font-size: 30px;
+}
+
+.search-form-wrapper {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: 20px 15px;
+  background: url(/resources/images/misc/bg_search-open.png) right center no-repeat #f89d1c;
+}
+.search-form-wrapper.open {
+  display: block;
+}
